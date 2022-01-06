@@ -1,7 +1,70 @@
-source ~/workspace/vim/init.vim 
 
+" vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Optional:
+Plugin 'honza/vim-snippets'
+call vundle#end()
+
+" plug
+call plug#begin()
+"Plug 'VundleVim/Vundle.vim'
+"Plug 'racer-rust/vim-racer'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Optional:
+"Plugin 'honza/vim-snippets'
+call plug#end()
+
+" let settings
+let g:snipMate = { 'snippet_version' : 1 }
+let g:ycm_auto_trigger=0 
+let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let mapleader = "\<space>"
+
+" set settings
+set nocompatible
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set incsearch
+
+" 文件类型检查
+filetype on
 filetype plugin indent on
+
+" 拼写检查
 syntax on
+
+" 自定义快捷键
+inoremap <C-H> <Left>
+inoremap <C-L> <Right>
+inoremap <C-J> <Down>
+inoremap <C-K> <Up>
+nnoremap tp :tabprevious<CR>
+nnoremap tt :tabnext<CR>
+nnoremap tn :tabnew<CR>
+
 
 " An example for a vimrc file.
 "
